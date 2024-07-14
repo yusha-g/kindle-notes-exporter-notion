@@ -1,5 +1,5 @@
 from dataclasses import dataclass
-from typing import Optional
+from typing import ClassVar, Optional
 
 @dataclass
 class Highlights:
@@ -10,6 +10,10 @@ class Highlights:
 
 @dataclass
 class Pages:
+    page_instances: ClassVar[list] = []
     title: str
     author: str
     highlights: list[Highlights]
+
+    # def __new__(cls, *agrs):
+    #     ...
