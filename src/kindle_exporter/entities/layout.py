@@ -15,5 +15,7 @@ class Pages:
     author: str
     highlights: list[Highlights]
 
-    # def __new__(cls, *agrs):
-    #     ...
+    def __new__(cls, **kwargs):
+        cls.page_instances.append(kwargs['title'])
+        instance = super().__new__(cls)
+        return instance
